@@ -36,7 +36,7 @@
         android:id="@+id/switch3"
         android:layout_width="267dp"
         android:layout_height="30dp"
-        android:text="EJEMPLO"
+        android:text="VENTILADOR"
         tools:layout_editor_absoluteX="76dp"
         tools:layout_editor_absoluteY="238dp" />
 
