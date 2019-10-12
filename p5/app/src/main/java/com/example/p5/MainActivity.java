@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +23,9 @@ import java.util.UUID;
 public class MainActivity extends AppCompatActivity
 {
     //Declaramos variables tipo botón que vamos a relacionar con las variables de la interfaz
-    Button idEncender, idApagar, idDesconectar;
-    TextView idBufferIn;
+    Button   idDesconectar;
+    Switch idSwitchV;
+    TextView idBufferIn,textV;
     Handler bluetoothIn;
     final int handlerState = 0;
     private BluetoothAdapter btAdapter = null;
@@ -45,9 +47,11 @@ public class MainActivity extends AppCompatActivity
 
         //Relacionar las variables botón con las respectivas interfaces
         idDesconectar= (Button) findViewById(R.id.idDesconectar);
-        idApagar = (Button) findViewById(R.id.idApagar);
-        idEncender= (Button) findViewById(R.id.idEncender);
+
+
         idBufferIn = (TextView) findViewById(R.id.idBufferIn);
+        idSwitchV=(Switch) findViewById(R.id.idSwitchV);
+        textV=(TextView) findViewById(R.id.textV);
 
         //Aquí llega la información
         bluetoothIn = new Handler() {
@@ -104,16 +108,8 @@ public class MainActivity extends AppCompatActivity
                 MyConexionBT.write("1");
             }
 
-        });
 
-        idApagar.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                MyConexionBT.write("0");
-            }
 
-        });
     }
 
 
@@ -181,6 +177,19 @@ public class MainActivity extends AppCompatActivity
             }
         }
     }
+
+    public void onclick(View view) {
+        if (view.getId()==R.id.idSwitchV){
+            if(idSwitchV.isChecked()){
+                textV.setText("Encendido");
+                MyConexionBT.write("1");
+
+            }else{
+                MyConexionBT.write("0");
+                textV.setText("Apagado");}
+        }
+    }
+
 
     //Crea la clase que permite crear el evento de conexion
     private class ConnectedThread extends Thread
