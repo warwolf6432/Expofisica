@@ -101,11 +101,6 @@ public class MainActivity extends AppCompatActivity
             }
 
         });
-        idEncender.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v)
-            {
-                MyConexionBT.write("1");
-            }
 
 
 
