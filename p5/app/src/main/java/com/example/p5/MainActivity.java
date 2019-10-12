@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity
         idEncender.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
-
                 MyConexionBT.write("1");
             }
 
@@ -122,8 +121,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onResume()
-    {
+    public void onResume() {
         super.onResume();
         //Consigue la direccion MAC desde DeviceListActivity via intent
         Intent intent = getIntent();
@@ -132,8 +130,7 @@ public class MainActivity extends AppCompatActivity
         //Setea la direccion MAC
         BluetoothDevice device = btAdapter.getRemoteDevice(address);
 
-        try
-        {
+        try {
             btSocket = createBluetoothSocket(device);
         } catch (IOException e) {
             Toast.makeText(getBaseContext(), "La creacción del Socket falló", Toast.LENGTH_LONG).show();
@@ -198,8 +195,7 @@ public class MainActivity extends AppCompatActivity
         private final OutputStream mmOutStream;
 
 
-        public ConnectedThread(BluetoothSocket socket)
-        {
+        public ConnectedThread(BluetoothSocket socket) {
             InputStream tmpIn = null;
             OutputStream tmpOut = null;
             try {
