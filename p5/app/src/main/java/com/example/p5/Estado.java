@@ -20,4 +20,9 @@ public class Estado extends AppCompatActivity
         MediaPlayer mp= MediaPlayer.create(this, R.raw.happy);
         mp.start();
     }
+    public void enamorado(View view)
+    {
+        MediaPlayer mp= MediaPlayer.create(this, R.raw.happy);
+        mp.start();
+    }
 }

@@ -127,7 +127,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(siguiente);
         }else if (id== R.id.itemEstado)
         {
-            Toast.makeText(this,  "Estado", Toast.LENGTH_LONG).show();
+            Intent siguiente= new Intent(this, Estado.class);
+            startActivity(siguiente);
         }
         return super.onOptionsItemSelected(item);
     }
