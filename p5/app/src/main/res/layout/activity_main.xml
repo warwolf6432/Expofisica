@@ -12,10 +12,10 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="63dp"
         android:layout_marginTop="80dp"
         android:text="Estado:"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -39,8 +39,8 @@
         android:id="@+id/idBufferIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="84dp"
         android:text="Datos:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtAbanico" />
@@ -79,18 +79,19 @@
         android:id="@+id/imCandado"
         android:layout_width="56dp"
         android:layout_height="44dp"
-        android:layout_marginTop="268dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="32dp"
         android:src="@drawable/candado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/imCafetera"
         android:layout_width="56dp"
         android:layout_height="39dp"
-        android:layout_marginTop="320dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginTop="308dp"
+        android:layout_marginEnd="32dp"
         android:src="@drawable/cafetera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -99,12 +100,11 @@
         android:id="@+id/imAbanico"
         android:layout_width="53dp"
         android:layout_height="55dp"
-        android:layout_marginTop="404dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginTop="364dp"
+        android:layout_marginEnd="36dp"
         android:src="@drawable/fan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/textView6"
@@ -114,8 +114,10 @@
         android:layout_marginBottom="25dp"
         android:text="Control:"
         app:layout_constraintBottom_toTopOf="@+id/idSwPersianas"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="64dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
         android:id="@+id/idSwPersianas"
@@ -164,12 +166,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="253dp"
         android:onClick="onclickSeguro"
-        android:text="Seguro"
+        android:text="Seguro     "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idSwLucesInternas" />
 
@@ -181,9 +183,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="253dp"
         android:onClick="onclickCafetera"
-        android:text="Cafetera"
+        android:text="Cafetera    "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.377"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idSwCerradura" />
 
@@ -191,111 +193,97 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginTop="80dp"
         android:text="Objeto:"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/idControl" />
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtPersianas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="45dp"
         android:text="Cerradas"
         android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imPersiana"
-        app:layout_constraintHorizontal_bias="0.372"
-        app:layout_constraintStart_toEndOf="@+id/idSwPersianas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
         android:id="@+id/txtLucesExternas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="45dp"
         android:text="Apagadas"
         android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imLucesExternas"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toEndOf="@+id/idSwLucesExternas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPersianas" />
 
     <TextView
         android:id="@+id/txtLucesInternas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="45dp"
         android:text="Apagadas"
         android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imLucesInternas"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toEndOf="@+id/idSwLucesInternas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLucesExternas" />
 
     <TextView
         android:id="@+id/txtCafetera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="46dp"
         android:text="Apagada"
         android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imCafetera"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toEndOf="@+id/idSwCafetera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSeguro" />
 
     <TextView
         android:id="@+id/txtAbanico"
         android:layout_width="82dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="45dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="28dp"
         android:text="Apagado"
         android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imAbanico"
-        app:layout_constraintStart_toEndOf="@+id/bv3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCafetera" />
 
     <TextView
         android:id="@+id/txtSeguro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginTop="24dp"
         android:text="Desactivado"
         android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imCandado"
-        app:layout_constraintHorizontal_bias="0.522"
-        app:layout_constraintStart_toEndOf="@+id/idSwCerradura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLucesInternas" />
 
     <TextView
         android:id="@+id/txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:text="Abánico"
         android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idSwCafetera" />
 
@@ -303,8 +291,8 @@
         android:id="@+id/bv1"
         android:layout_width="41dp"
         android:layout_height="42dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:onClick="onclickB1"
         android:text="1"
         app:layout_constraintStart_toStartOf="parent"
@@ -341,15 +329,13 @@
         android:id="@+id/bApagarAbanico"
         android:layout_width="83dp"
         android:layout_height="39dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="243dp"
+        android:layout_marginTop="404dp"
         android:onClick="onclickAAbanico"
         android:text="Apagar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bv2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
