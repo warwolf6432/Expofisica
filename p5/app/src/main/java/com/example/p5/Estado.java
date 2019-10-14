@@ -19,6 +19,7 @@ public class Estado extends AppCompatActivity
 {
     MediaPlayer mp= MediaPlayer.create(this, R.raw.happy);
     mp.start();
+
 }
 
     public void wara(View view)
@@ -36,5 +37,10 @@ public class Estado extends AppCompatActivity
     {
         MediaPlayer mp= MediaPlayer.create(this, R.raw.bb);
         mp.start();
+    }
+    public void stop(View view)
+    {
+        MediaPlayer mp= MediaPlayer.create(this, R.raw.bb);
+mp.stop();
     }
 }
