@@ -295,6 +295,8 @@
         android:layout_marginTop="16dp"
         android:onClick="onclickB1"
         android:text="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtView" />
 
@@ -302,27 +304,27 @@
         android:id="@+id/bv2"
         android:layout_width="41dp"
         android:layout_height="42dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="65dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginBottom="164dp"
         android:onClick="onclickB2"
         android:text="2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bv3"
-        app:layout_constraintStart_toEndOf="@+id/bv1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idSwCafetera"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.024" />
 
     <Button
         android:id="@+id/bv3"
         android:layout_width="41dp"
         android:layout_height="42dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="68dp"
         android:onClick="onclickB3"
         android:text="3"
-        app:layout_constraintStart_toEndOf="@+id/bv2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idSwCafetera" />
 
     <Button
@@ -333,7 +335,7 @@
         android:onClick="onclickAAbanico"
         android:text="Apagar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
