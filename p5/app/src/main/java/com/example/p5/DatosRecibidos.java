@@ -23,50 +23,27 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity
+public class DatosRecibidos extends AppCompatActivity
 {
-    //Declaramos variables tipo botón que vamos a relacionar con las variables de la interfaz
-    //Atributos
-    Button bv1, bv2, bv3, bApagarAbanico;
-    Switch idSwPersianas, idSwLucesExternas, idSwLucesInternas, idSwCerradura, idSwCafetera;
-    TextView idBufferIn, txtPersianas, txtLucesExternas, txtLucesInternas, txtSeguro, txtCafetera, txtAbanico;
+    TextView idTxtTemp;
     Handler bluetoothIn;
     final int handlerState = 0;
     private BluetoothAdapter btAdapter = null;
     private BluetoothSocket btSocket = null;
     private StringBuilder DataStringIN = new StringBuilder();
-    private ConnectedThread MyConexionBT;
+    private DatosRecibidos.ConnectedThread MyConexionBT;
     // Identificador unico de servicio - SPP UUID
     private static final UUID BTMODULEUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     // String para la direccion MAC
     private static String address = null;
 
-
-    @SuppressLint("HandlerLeak")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        //Relacionar las variables botón con las respectivas interfaces
-        bv1= (Button) findViewById(R.id.bv1);
-        bv2= (Button) findViewById(R.id.bv2);
-        bv3= (Button) findViewById(R.id.bv3);
-        bApagarAbanico= (Button) findViewById(R.id.bApagarAbanico);
-        idBufferIn = (TextView) findViewById(R.id.idBufferIn);
-        txtPersianas=(TextView) findViewById(R.id.txtPersianas);
-        txtLucesExternas=(TextView) findViewById(R.id.txtLucesExternas);
-        txtLucesInternas=(TextView) findViewById(R.id.txtLucesInternas);
-        txtSeguro=(TextView) findViewById(R.id.txtSeguro);
-        txtCafetera=(TextView) findViewById(R.id.txtCafetera);
-        txtAbanico=(TextView) findViewById(R.id.txtAbanico);
-        idSwPersianas=(Switch) findViewById(R.id.idSwPersianas);
-        idSwLucesExternas=(Switch) findViewById(R.id.idSwLucesExternas);
-        idSwLucesInternas=(Switch) findViewById(R.id.idSwLucesInternas);
-        idSwCerradura=(Switch) findViewById(R.id.idSwCerradura);
-        idSwCafetera=(Switch) findViewById(R.id.idSwCafetera);
-
+        setContentView(R.layout.activity_datos_recibidos);
+        //Relacionar variables con el activity
+        idTxtTemp = (TextView) findViewById(R.id.idTxtTemp);
         //Aquí llega la información
         bluetoothIn = new Handler()
         {
@@ -77,13 +54,13 @@ public class MainActivity extends AppCompatActivity
                     String readMessage = (String) msg.obj;
                     DataStringIN.append(readMessage);
 
-                    int endOfLineIndex = DataStringIN.indexOf("#");
+                    int endOfLineIndex = DataStringIN.indexOf("/");
 
                     if (endOfLineIndex > 0)
                     {
                         //Variable que recibe los datos
                         String dataInPrint = DataStringIN.substring(0, endOfLineIndex);
-                        idBufferIn.setText("Dato: " + dataInPrint);//<-<- PARTE A MODIFICAR >->->
+                        idTxtTemp.setText("Temperatura: " + dataInPrint);//<-<- PARTE A MODIFICAR >->->
                         DataStringIN.delete(0, DataStringIN.length());
                     }
                 }
@@ -91,7 +68,8 @@ public class MainActivity extends AppCompatActivity
         };
 
         btAdapter = BluetoothAdapter.getDefaultAdapter(); // get Bluetooth adapter
-        VerificarEstadoBT();
+        //VerificarEstadoBT();
+
     }
 
     //MENÚ
@@ -139,10 +117,9 @@ public class MainActivity extends AppCompatActivity
         }
         return super.onOptionsItemSelected(item);
     }
+    //MENÚ
 
-
-
-
+    //CONEXIONES BLUETOOTH
     //Crear una conexión segura
     private BluetoothSocket createBluetoothSocket(BluetoothDevice device) throws IOException
     {
@@ -176,7 +153,7 @@ public class MainActivity extends AppCompatActivity
             } catch (IOException e2) {
             }
         }
-        MyConexionBT = new ConnectedThread(btSocket);
+        MyConexionBT = new DatosRecibidos.ConnectedThread(btSocket);
         MyConexionBT.start();
     }
 
@@ -187,141 +164,30 @@ public class MainActivity extends AppCompatActivity
         try { // Cuando se sale de la aplicación esta parte permite
             // que no se deje abierto el socket
             btSocket.close();
-        } catch (IOException e2) {
+        } catch (IOException e2)
+        {
 
         }
     }
 
     //Comprueba que el dispositivo Bluetooth Bluetooth está disponible y solicita que se active si está desactivado
     //Es decir, verifica si el dispositivo soporta o no soporta bluetooth.
-    private void VerificarEstadoBT()
-    {
-
-        if (btAdapter == null) {
-            Toast.makeText(getBaseContext(), "El dispositivo no soporta bluetooth", Toast.LENGTH_LONG).show();
-        } else {
-            if (btAdapter.isEnabled()) {
-            } else {
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableBtIntent, 1);
-            }
-        }
-    }
-
-
-
-
-
-
-    //ACCIONES DE LOS SWITCHES
-    public void onclickPersianas(View view)
-    {
-
-        //Persianas
-        if (view.getId()==R.id.idSwPersianas)
-        {
-            //Evento de arrastrar
-            if(idSwPersianas.isChecked()){
-                txtPersianas.setText("Abiertas");
-                MyConexionBT.write("1");
-
-            }else{
-                MyConexionBT.write("2");
-                txtPersianas.setText("Cerradas");}
-        }
-    }
-
-    public void onclickLE(View view)
-    {
-        //Luces externas
-        if (view.getId()==R.id.idSwLucesExternas)
-        {
-            //Evento de arrastrar
-            if(idSwLucesExternas.isChecked()){
-                txtLucesExternas.setText("Prendidas");
-                MyConexionBT.write("3");
-
-            }else{
-                MyConexionBT.write("4");
-                txtLucesExternas.setText("Apagadas");}
-        }
-    }
-
-    public void onclickLI(View view)
-    {
-        //Luces internas
-        if (view.getId()==R.id.idSwLucesInternas)
-        {
-            //Evento de arrastrar
-            if(idSwLucesInternas.isChecked()){
-                txtLucesInternas.setText("Prendidas");
-                MyConexionBT.write("5");
-
-            }else{
-                MyConexionBT.write("6");
-                txtLucesInternas.setText("Apagadas");}
-        }
-    }
-
-    public void onclickSeguro(View view)
-    {
-        //Seguro
-        if (view.getId()==R.id.idSwCerradura)
-        {
-            //Evento de arrastrar
-            if(idSwCerradura.isChecked()){
-                txtSeguro.setText("Activado");
-                MyConexionBT.write("7");
-
-            }else{
-                MyConexionBT.write("8");
-                txtSeguro.setText("Desactivado");}
-        }
-    }
-    public void onclickCafetera(View view)
-    {
-        //Cafetera
-        if (view.getId()==R.id.idSwCafetera)
-        {
-            //Evento de arrastrar
-            if(idSwCafetera.isChecked()){
-                txtCafetera.setText("Prendida");
-                MyConexionBT.write("9");
-
-            }else{
-                MyConexionBT.write("10");
-                txtCafetera.setText("Apagada");}
-        }
-    }
-    //Onclick para botones
-   // bv1.setOnClickListener(new View.OnClickListener()
+   // private void VerificarEstadoBT()
     //{
-        public void onclickB1(View view)
-        {
-            txtAbanico.setText("V1");
-            MyConexionBT.write("11");
-        }
-    //});
 
-    public void onclickB2(View view)
-    {
-        txtAbanico.setText("V2");
-        MyConexionBT.write("12");
-    }
-    public void onclickB3(View view)
-    {
-        txtAbanico.setText("V3");
-        MyConexionBT.write("13");
-    }
-    public void onclickAAbanico(View view)
-    {
-        txtAbanico.setText("Apagado");
-        MyConexionBT.write("14");
-    }
+      //  if (btAdapter == null) {
+        //    Toast.makeText(getBaseContext(), "El dispositivo no soporta bluetooth", Toast.LENGTH_LONG).show();
+        //} else {
+          //  if (btAdapter.isEnabled()) {
+            //} else {
+              //  Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                //startActivityForResult(enableBtIntent, 1);
+            //}
+        //}
+    //}
+//CONEXIONES BLUETOOTH
 
-
-
-
+    //CONEXIONES BLUETOOTH
     //Crea la clase que permite crear el evento de conexion
     private class ConnectedThread extends Thread
     {
@@ -367,6 +233,46 @@ public class MainActivity extends AppCompatActivity
                 //si no es posible enviar datos se cierra la conexión
                 Toast.makeText(getBaseContext(), "La Conexión falló", Toast.LENGTH_LONG).show();
                 finish();
+            }
+        }
+    }
+
+    //CONEXIONES BLUETOOTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private void VerificarEstadoBT()
+    {
+
+        if (btAdapter == null) {
+            Toast.makeText(getBaseContext(), "El dispositivo no soporta bluetooth", Toast.LENGTH_LONG).show();
+        } else {
+            if (btAdapter.isEnabled()) {
+            } else {
+                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(enableBtIntent, 1);
             }
         }
     }
