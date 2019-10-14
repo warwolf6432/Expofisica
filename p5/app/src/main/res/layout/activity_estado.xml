@@ -36,27 +36,45 @@
         android:id="@+id/bFeliz"
         android:layout_width="117dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="532dp"
         android:onClick="feliz"
         android:src="@drawable/feliz"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.189" />
+
+    <ImageView
+        android:id="@+id/bwara"
+        android:layout_width="117dp"
+        android:layout_height="70dp"
+        android:onClick="wara"
+        android:src="@drawable/waracha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/bjeje"
+        android:layout_width="117dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="160dp"
+        android:onClick="jeje"
+        android:src="@drawable/bn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.249" />
 
     <ImageView
         android:id="@+id/button2"
         android:layout_width="99dp"
         android:layout_height="72dp"
         android:layout_marginBottom="456dp"
+        android:onClick="enamorado"
         android:src="@drawable/enamorado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.635" />
+        app:layout_constraintVertical_bias="0.615" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

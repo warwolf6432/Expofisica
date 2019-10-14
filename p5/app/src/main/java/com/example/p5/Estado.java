@@ -16,13 +16,25 @@ public class Estado extends AppCompatActivity
         setContentView(R.layout.activity_estado);
     }
     public void feliz(View view)
+{
+    MediaPlayer mp= MediaPlayer.create(this, R.raw.happy);
+    mp.start();
+}
+
+    public void wara(View view)
     {
-        MediaPlayer mp= MediaPlayer.create(this, R.raw.happy);
+        MediaPlayer mp= MediaPlayer.create(this, R.raw.tt);
         mp.start();
     }
     public void enamorado(View view)
     {
-        MediaPlayer mp= MediaPlayer.create(this, R.raw.happy);
+        MediaPlayer mp= MediaPlayer.create(this, R.raw.minina);
+        mp.start();
+    }
+
+    public void jeje(View view)
+    {
+        MediaPlayer mp= MediaPlayer.create(this, R.raw.bb);
         mp.start();
     }
 }
