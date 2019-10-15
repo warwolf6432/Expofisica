@@ -41,6 +41,12 @@ public class Estado extends AppCompatActivity
     public void stop(View view)
     {
         MediaPlayer mp= MediaPlayer.create(this, R.raw.bb);
+        MediaPlayer mp1= MediaPlayer.create(this, R.raw.minina);
+        MediaPlayer mp2= MediaPlayer.create(this, R.raw.tt);
+        MediaPlayer mp3= MediaPlayer.create(this, R.raw.happy);
 mp.stop();
+        mp2.stop();
+        mp3.stop();
+        mp1.stop();
     }
 }

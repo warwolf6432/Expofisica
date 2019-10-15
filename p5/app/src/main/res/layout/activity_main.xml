@@ -319,7 +319,7 @@
         android:id="@+id/bv3"
         android:layout_width="41dp"
         android:layout_height="42dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="64dp"
         android:onClick="onclickB3"
         android:text="3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -331,11 +331,11 @@
         android:id="@+id/bApagarAbanico"
         android:layout_width="83dp"
         android:layout_height="39dp"
-        android:layout_marginTop="404dp"
+        android:layout_marginTop="400dp"
         android:onClick="onclickAAbanico"
         android:text="Apagar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

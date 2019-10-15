@@ -110,7 +110,7 @@ public class DatosRecibidos extends AppCompatActivity
             Intent siguiente= new Intent(this, Estado.class);
             startActivity(siguiente);
         }
-        else if (id==R.id.itemDatos)
+        else if (id==R.id.itemInicio)
         {
             Intent siguiente= new Intent(this, DatosRecibidos.class);
             startActivity(siguiente);

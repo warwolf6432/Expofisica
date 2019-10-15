@@ -12,6 +12,6 @@
         android:id="@+id/itemInicio"
         android:title="Inicio" />
     <item
-        android:id="@+id/itemDatos"
+        android:id="@+id/itemd"
         android:title="Datos de mi casa" />
 </menu>

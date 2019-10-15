@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
                     {
                         //Variable que recibe los datos
                         String dataInPrint = DataStringIN.substring(0, endOfLineIndex);
-                        idBufferIn.setText("Dato: " + dataInPrint);//<-<- PARTE A MODIFICAR >->->
+                        idBufferIn.setText("Temperatura: " + dataInPrint);//<-<- PARTE A MODIFICAR >->->
                         DataStringIN.delete(0, DataStringIN.length());
                     }
                 }
@@ -132,7 +132,9 @@ public class MainActivity extends AppCompatActivity
             Intent siguiente= new Intent(this, Estado.class);
             startActivity(siguiente);
         }
-        else if (id==R.id.itemDatos)
+        else
+
+            if (id==R.id.itemd)
         {
             Intent siguiente= new Intent(this, DatosRecibidos.class);
             startActivity(siguiente);
@@ -289,7 +291,7 @@ public class MainActivity extends AppCompatActivity
                 MyConexionBT.write("9");
 
             }else{
-                MyConexionBT.write("10");
+                MyConexionBT.write("a");
                 txtCafetera.setText("Apagada");}
         }
     }
@@ -299,24 +301,24 @@ public class MainActivity extends AppCompatActivity
         public void onclickB1(View view)
         {
             txtAbanico.setText("V1");
-            MyConexionBT.write("11");
+            MyConexionBT.write("b");
         }
     //});
 
     public void onclickB2(View view)
     {
         txtAbanico.setText("V2");
-        MyConexionBT.write("12");
+        MyConexionBT.write("c");
     }
     public void onclickB3(View view)
     {
         txtAbanico.setText("V3");
-        MyConexionBT.write("13");
+        MyConexionBT.write("d");
     }
     public void onclickAAbanico(View view)
     {
         txtAbanico.setText("Apagado");
-        MyConexionBT.write("14");
+        MyConexionBT.write("e");
     }
 
 
