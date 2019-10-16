@@ -25,12 +25,40 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtTemp"
+        android:layout_width="114dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="235dp"
+        android:layout_marginBottom="595dp"
+        android:text="Temperatura: "
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idControl"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/txtHumedad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="108dp" />
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="259dp"
+        android:layout_marginBottom="528dp"
+        android:text="Humedad: "
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTemp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

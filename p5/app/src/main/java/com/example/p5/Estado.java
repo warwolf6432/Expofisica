@@ -11,10 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+
 import java.io.IOException;
 
 public class Estado extends AppCompatActivity
 {
+
+
 
     private BluetoothSocket btSocket = null;
 
