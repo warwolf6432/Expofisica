@@ -132,11 +132,9 @@ public class MainActivity extends AppCompatActivity
             Intent siguiente= new Intent(this, Estado.class);
             startActivity(siguiente);
         }
-        else
-
-            if (id==R.id.itemd)
+        else if (id==R.id.itemd)
         {
-            Intent siguiente= new Intent(this, DatosRecibidos.class);
+            Intent siguiente= new Intent(this, DatosCasa.class);
             startActivity(siguiente);
         }
         return super.onOptionsItemSelected(item);

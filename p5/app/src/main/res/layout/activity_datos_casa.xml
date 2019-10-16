@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
-    tools:context=".DatosRecibidos">
+    tools:context=".DatosCasa">
 
     <TextView
         android:id="@+id/idControl"
-        android:layout_width="271dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-thin"
-        android:text="DATOS DE MI CASA"
+        android:text="DATOS DE LA CASA"
 
-        android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimary"
         android:textSize="28sp"
@@ -26,11 +25,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/idTxtTemp"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Temperatura"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="119dp" />
+        android:text="TextView"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="108dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
