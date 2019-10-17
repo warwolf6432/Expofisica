@@ -143,6 +143,9 @@ public class MainActivity extends AppCompatActivity
 
 
 
+
+
+
     //Crear una conexión segura
     private BluetoothSocket createBluetoothSocket(BluetoothDevice device) throws IOException
     {
