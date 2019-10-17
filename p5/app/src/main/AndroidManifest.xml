@@ -8,12 +8,10 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Smart House"
+        android:label="SMART HOUSE"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
         <activity
             android:name=".Bienvenida"
             android:screenOrientation="portrait">
@@ -23,7 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DatosCasa"
+        <activity
+            android:name=".DatosCasa"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Estado"
