@@ -73,39 +73,42 @@ public class Estado extends AppCompatActivity
         }
         return super.onOptionsItemSelected(item);
     }
-
+boolean lol=true;
     public void feliz(View view)
-{
+    {if(lol){
     MediaPlayer mp= MediaPlayer.create(this, R.raw.happy);
     mp.start();
+    lol=false;}
+
 
 }
-
+    MediaPlayer mp;
     public void wara(View view)
     {
-        MediaPlayer mp= MediaPlayer.create(this, R.raw.tt);
-        mp.start();
+        if(lol){
+            MediaPlayer mp= MediaPlayer.create(this, R.raw.tt);
+            mp.start();
+            lol=false;}
+
     }
     public void enamorado(View view)
-    {
+    {if(lol){
         MediaPlayer mp= MediaPlayer.create(this, R.raw.minina);
         mp.start();
+        lol=false;}
+
     }
 
     public void jeje(View view)
-    {
+    {if(lol){
         MediaPlayer mp= MediaPlayer.create(this, R.raw.bb);
         mp.start();
-    }
-    public void stop(View view)
-    {
-        MediaPlayer mp= MediaPlayer.create(this, R.raw.bb);
-        MediaPlayer mp1= MediaPlayer.create(this, R.raw.minina);
-        MediaPlayer mp2= MediaPlayer.create(this, R.raw.tt);
-        MediaPlayer mp3= MediaPlayer.create(this, R.raw.happy);
-mp.stop();
-        mp2.stop();
-        mp3.stop();
-        mp1.stop();
-    }
+        lol=false;}
+
+
+}public void stop(View view){
+    mp.stop();
+    mp.release();
+    lol=true;
+}
 }
