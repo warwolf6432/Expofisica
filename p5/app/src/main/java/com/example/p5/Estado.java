@@ -97,6 +97,13 @@ public class Estado extends AppCompatActivity
          mp= MediaPlayer.create(this, R.raw.bb);
         mp.start();
     }
+
+    public void picar(View view)
+    {
+        mp= MediaPlayer.create(this, R.raw.wiss);
+        mp.start();
+    }
+
     public void stop(View view)
     {
 

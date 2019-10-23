@@ -46,6 +46,19 @@
         app:layout_constraintVertical_bias="0.447" />
 
     <ImageView
+        android:id="@+id/picaron"
+        android:layout_width="117dp"
+        android:layout_height="70dp"
+        android:onClick="picar"
+        android:src="@drawable/pica"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606" />
+
+    <ImageView
         android:id="@+id/bwara"
         android:layout_width="117dp"
         android:layout_height="70dp"
