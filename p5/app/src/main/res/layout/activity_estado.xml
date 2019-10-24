@@ -102,7 +102,7 @@
         android:layout_width="165dp"
         android:layout_height="60dp"
         android:gravity="center"
-        android:onClick="stop"
+        android:onClick="stopButtom"
         android:text="Detener"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"

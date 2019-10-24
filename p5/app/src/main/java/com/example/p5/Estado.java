@@ -73,40 +73,73 @@ public class Estado extends AppCompatActivity
         }
         return super.onOptionsItemSelected(item);
     }
-
+ public boolean x=true;
 
     MediaPlayer mp;
     public void wara(View view)
     {
-         mp= MediaPlayer.create(this, R.raw.tt);
-        mp.start();
+        if(x){ mp= MediaPlayer.create(this, R.raw.tt);
+            mp.start();
+            x=false;}
+        else{stop(view);
+            mp= MediaPlayer.create(this, R.raw.tt);
+            mp.start();
+            }
+
     }
     public void happy(View view)
     {
-        mp= MediaPlayer.create(this, R.raw.happy);
-        mp.start();
+        if(x){ mp= MediaPlayer.create(this, R.raw.happy);
+            mp.start();
+            x=false;}else{stop(view);
+
+            mp= MediaPlayer.create(this, R.raw.happy);
+            mp.start();
+            }
     }
     public void enamorado(View view)
     {
-         mp= MediaPlayer.create(this, R.raw.minina);
-        mp.start();
+
+        if(x){ mp= MediaPlayer.create(this, R.raw.minina);
+            mp.start();
+            x=false;}else{stop(view);
+
+            mp= MediaPlayer.create(this, R.raw.minina);
+            mp.start();
+        }
     }
 
     public void jeje(View view)
     {
-         mp= MediaPlayer.create(this, R.raw.bb);
-        mp.start();
+        if(x){ mp= MediaPlayer.create(this, R.raw.bb);
+            mp.start();
+            x=false;}else{stop(view);
+
+            mp= MediaPlayer.create(this, R.raw.bb);
+            mp.start();
+        }
     }
 
     public void picar(View view)
     {
-        mp= MediaPlayer.create(this, R.raw.wiss);
-        mp.start();
+        if(x){ mp= MediaPlayer.create(this, R.raw.wiss);
+            mp.start();
+            x=false;}else{stop(view);
+
+            mp= MediaPlayer.create(this, R.raw.wiss);
+            mp.start();
+        }
     }
 
     public void stop(View view)
     {
+        mp.stop();
+        mp.release();
+    }
 
+    public void stopButtom(View view)
+    {
+        x=true;
         mp.stop();
         mp.release();
     }
