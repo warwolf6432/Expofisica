@@ -16,8 +16,6 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.view.View;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -137,11 +135,15 @@ public class MainActivity extends AppCompatActivity
             Intent siguiente= new Intent(this, DatosCasa.class);
             startActivity(siguiente);
         }
+        else if (id==R.id.itemLampara)
+        {
+            Intent siguiente= new Intent(this, Lampara.class);
+            startActivity(siguiente);
+        }
 
         return super.onOptionsItemSelected(item);
     }
-
-
+//MENU
 
 
 

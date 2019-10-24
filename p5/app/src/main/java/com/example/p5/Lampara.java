@@ -1,58 +1,46 @@
 package com.example.p5;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.bluetooth.BluetoothSocket;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Handler;
+//import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.view.View;
-
+import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
 
-import java.io.IOException;
-
-public class DatosCasa extends AppCompatActivity
+public class Lampara extends AppCompatActivity
 {
-    TextView txtTemp, txtHumedad;
     Handler bluetoothIn;
     final int handlerState = 0;
     private BluetoothAdapter btAdapter = null;
     private BluetoothSocket btSocket = null;
     private StringBuilder DataStringIN = new StringBuilder();
-    private DatosCasa.ConnectedThread MyConexionBT;
+    private Lampara.ConnectedThread MyConexionBT;
     // Identificador unico de servicio - SPP UUID
     private static final UUID BTMODULEUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     // String para la direccion MAC
     private static String address = null;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_datos_casa);
+        setContentView(R.layout.activity_lampara);
 
-        txtTemp=(TextView) findViewById(R.id.txtTemp);
-        txtHumedad=(TextView) findViewById(R.id.txtHumedad);
-
+        //REVISAR SI ESTO ES NECESARIO
         //Aquí llega la información
         bluetoothIn = new Handler()
         {
@@ -64,25 +52,22 @@ public class DatosCasa extends AppCompatActivity
                     DataStringIN.append(readMessage);
 
                     int endOfLineIndex = DataStringIN.indexOf("#");
-                    int endHumedad= DataStringIN.indexOf("/");
 
                     if (endOfLineIndex > 0)
                     {
-                        //Variable que recibe los datos de la temperatura
+                        //Variable que recibe los datos
                         String dataInPrint = DataStringIN.substring(0, endOfLineIndex);
-                        txtTemp.setText("Temperatura: " + dataInPrint);
                         DataStringIN.delete(0, DataStringIN.length());
-                    }
-                    if(endHumedad>0)
-                    {
-                        //Variable que recibe los datos de la humedad
-                        String dataHum= DataStringIN.substring(0, endHumedad);
-                        txtHumedad.setText("Humedad:" + dataHum);
                     }
                 }
             }
         };
+
+        btAdapter = BluetoothAdapter.getDefaultAdapter(); // get Bluetooth adapter
+        VerificarEstadoBT();
     }
+
+
 
     //Crear una conexión segura
     private BluetoothSocket createBluetoothSocket(BluetoothDevice device) throws IOException
@@ -117,7 +102,7 @@ public class DatosCasa extends AppCompatActivity
             } catch (IOException e2) {
             }
         }
-        MyConexionBT = new DatosCasa.ConnectedThread(btSocket);
+        MyConexionBT = new Lampara.ConnectedThread(btSocket);
         MyConexionBT.start();
     }
 
@@ -125,10 +110,12 @@ public class DatosCasa extends AppCompatActivity
     public void onPause()
     {
         super.onPause();
-        try { // Cuando se sale de la aplicación esta parte permite
+        try
+        { // Cuando se sale de la aplicación esta parte permite
             // que no se deje abierto el socket
             btSocket.close();
-        } catch (IOException e2) {
+        } catch (IOException e2)
+        {
 
         }
     }
@@ -149,6 +136,8 @@ public class DatosCasa extends AppCompatActivity
         }
     }
 
+
+
     //Crea la clase que permite crear el evento de conexion
     private class ConnectedThread extends Thread
     {
@@ -156,7 +145,8 @@ public class DatosCasa extends AppCompatActivity
         private final OutputStream mmOutStream;
 
 
-        public ConnectedThread(BluetoothSocket socket) {
+        public ConnectedThread(BluetoothSocket socket)
+        {
             InputStream tmpIn = null;
             OutputStream tmpOut = null;
             try {
@@ -188,9 +178,11 @@ public class DatosCasa extends AppCompatActivity
         //Envio de trama
         public void write(String input)
         {
-            try {
+            try
+            {
                 mmOutStream.write(input.getBytes());
-            } catch (IOException e) {
+            } catch (IOException e)
+            {
                 //si no es posible enviar datos se cierra la conexión
                 Toast.makeText(getBaseContext(), "La Conexión falló", Toast.LENGTH_LONG).show();
                 finish();
@@ -198,57 +190,6 @@ public class DatosCasa extends AppCompatActivity
         }
     }
 
-    //MENÚ
-    //Método para arrastras y ocultar el menú
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        //El R es porque está en la carpeta Res
-        getMenuInflater().inflate(R.menu.overflow, menu);
-        return true;
-    }
-
-    //Método para asignar las opciones correspondientes al menú
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        int id=item.getItemId();
-        if (id==R.id.itemDesconectar)
-        {
-            if (btSocket != null)
-            {
-                try
-                {
-                    //VERIFICAR ESTO
-                    btSocket.close();
-                } catch (IOException e)
-                {
-                    Toast.makeText(getBaseContext(), "Error", Toast.LENGTH_SHORT).show();
-                    ;
-                }
-            }
-            finish();
-
-        }else if (id==R.id.itemInicio)
-        {
-            Intent siguiente= new Intent(this, Bienvenida.class);
-            startActivity(siguiente);
-        }else if (id== R.id.itemEstado)
-        {
-            Intent siguiente= new Intent(this, Estado.class);
-            startActivity(siguiente);
-        }
-        else if (id==R.id.itemd)
-        {
-            Intent siguiente= new Intent(this, DatosCasa.class);
-            startActivity(siguiente);
-        }
-        else if (id==R.id.itemLampara)
-        {
-            Intent siguiente= new Intent(this, Lampara.class);
-            startActivity(siguiente);
-        }
-        return super.onOptionsItemSelected(item);
-    }
-    //MENÚ
 
 
 }

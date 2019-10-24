@@ -14,4 +14,7 @@
     <item
         android:id="@+id/itemd"
         android:title="Datos de mi casa" />
+    <item
+        android:id="@+id/itemLampara"
+        android:title="Lampara mágica" />
 </menu>
