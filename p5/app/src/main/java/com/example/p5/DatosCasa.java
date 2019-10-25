@@ -52,6 +52,36 @@ public class DatosCasa extends AppCompatActivity
 
         txtTemp=(TextView) findViewById(R.id.txtTemp);
         txtHumedad=(TextView) findViewById(R.id.txtHumedad);
+
+        //Aquí llega la información
+        bluetoothIn = new Handler()
+        {
+            public void handleMessage(android.os.Message msg)
+            {
+                if (msg.what == handlerState)
+                {
+                    String readMessage = (String) msg.obj;
+                    DataStringIN.append(readMessage);
+
+                    int endOfLineIndex = DataStringIN.indexOf("#");
+                    int endHumedad= DataStringIN.indexOf("/");
+
+                    if (endOfLineIndex > 0)
+                    {
+                        //Variable que recibe los datos de la temperatura
+                        String dataInPrint = DataStringIN.substring(0, endOfLineIndex);
+                        txtTemp.setText("Temperatura: " + dataInPrint);
+                        DataStringIN.delete(0, DataStringIN.length());
+                    }
+                    if(endHumedad>0)
+                    {
+                        //Variable que recibe los datos de la humedad
+                        String dataHum= DataStringIN.substring(0, endHumedad);
+                        txtHumedad.setText("Humedad:" + dataHum);
+                    }
+                }
+            }
+        };
     }
 
 
