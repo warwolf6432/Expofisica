@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".Lampara">
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="159dp"
-        android:layout_height="72dp"
+        android:layout_width="119dp"
+        android:layout_height="75dp"
         android:layout_marginStart="148dp"
         android:layout_marginEnd="148dp"
         android:text="LAMPARA MAGICA"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="56dp" />
 
