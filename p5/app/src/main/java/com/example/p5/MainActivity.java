@@ -1,5 +1,6 @@
 package com.example.p5;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
@@ -41,13 +42,13 @@ public class MainActivity extends AppCompatActivity
 
 
     @SuppressLint("HandlerLeak")
-    @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //Relacionar las variables botón con las respectivas interfaces
+
         bv1= (Button) findViewById(R.id.bv1);
         bv2= (Button) findViewById(R.id.bv2);
         bv3= (Button) findViewById(R.id.bv3);
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity
         btAdapter = BluetoothAdapter.getDefaultAdapter(); // get Bluetooth adapter
         VerificarEstadoBT();
     }
+
 
     //MENÚ
     //Método para arrastras y ocultar el menú
