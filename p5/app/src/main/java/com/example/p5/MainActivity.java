@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity
     //Declaramos variables tipo botón que vamos a relacionar con las variables de la interfaz
     //Atributos
     Button bv1, bv2, bv3, bApagarAbanico;
-    Switch idSwPersianas, idSwLucesExternas, idSwLucesInternas, idSwCerradura, idSwCafetera;
-    TextView idBufferIn, txtPersianas, txtLucesExternas, txtLucesInternas, txtSeguro, txtCafetera, txtAbanico;
+    Switch  enchufe1,enchufe2,idSwLucesExternas, idSwLucesInternas, idSwCerradura, idSwCafetera;
+    TextView idBufferIn, txtLucesExternas, txtLucesInternas, txtSeguro, txtCafetera, txtAbanico;
     Handler bluetoothIn;
     final int handlerState = 0;
     private BluetoothAdapter btAdapter = null;
@@ -54,18 +54,19 @@ public class MainActivity extends AppCompatActivity
         bv3= (Button) findViewById(R.id.bv3);
         bApagarAbanico= (Button) findViewById(R.id.bApagarAbanico);
         idBufferIn = (TextView) findViewById(R.id.idBufferIn);
-        txtPersianas=(TextView) findViewById(R.id.txtPersianas);
+
         txtLucesExternas=(TextView) findViewById(R.id.txtLucesExternas);
         txtLucesInternas=(TextView) findViewById(R.id.txtLucesInternas);
         txtSeguro=(TextView) findViewById(R.id.txtSeguro);
         txtCafetera=(TextView) findViewById(R.id.txtCafetera);
         txtAbanico=(TextView) findViewById(R.id.txtAbanico);
-        idSwPersianas=(Switch) findViewById(R.id.idSwPersianas);
+
         idSwLucesExternas=(Switch) findViewById(R.id.idSwLucesExternas);
         idSwLucesInternas=(Switch) findViewById(R.id.idSwLucesInternas);
         idSwCerradura=(Switch) findViewById(R.id.idSwCerradura);
         idSwCafetera=(Switch) findViewById(R.id.idSwCafetera);
-
+        enchufe1=(Switch) findViewById(R.id.enchufe1);
+        enchufe2=(Switch) findViewById(R.id.enchufe2);
         //Aquí llega la información
         bluetoothIn = new Handler()
         {
@@ -217,22 +218,7 @@ public class MainActivity extends AppCompatActivity
 
 
     //ACCIONES DE LOS SWITCHES
-    public void onclickPersianas(View view)
-    {
 
-        //Persianas
-        if (view.getId()==R.id.idSwPersianas)
-        {
-            //Evento de arrastrar
-            if(idSwPersianas.isChecked()){
-                txtPersianas.setText("Abiertas");
-                MyConexionBT.write("1");
-
-            }else{
-                MyConexionBT.write("2");
-                txtPersianas.setText("Cerradas");}
-        }
-    }
 
     public void onclickLE(View view)
     {
@@ -321,8 +307,52 @@ public class MainActivity extends AppCompatActivity
         txtAbanico.setText("Apagado");
         MyConexionBT.write("e");
     }
+    public void subirP(View view)
+    {
 
+        MyConexionBT.write("f");
+    }
+    public void pararP(View view)
+    {
 
+        MyConexionBT.write("h");
+    }
+    public void bajarP(View view)
+    {
+
+        MyConexionBT.write("i");
+    }
+
+    public void ench1(View view)
+    {
+        //Luces externas
+        if (view.getId()==R.id.enchufe1)
+        {
+            //Evento de arrastrar
+            if(enchufe1.isChecked()){
+
+                MyConexionBT.write("j");
+
+            }else{
+                MyConexionBT.write("k");
+                ;}
+        }
+    }
+    public void ench2(View view)
+    {
+        //Luces externas
+        if (view.getId()==R.id.enchufe2)
+        {
+            //Evento de arrastrar
+            if(enchufe1.isChecked()){
+
+                MyConexionBT.write("l");
+
+            }else{
+                MyConexionBT.write("m");
+                ;}
+        }
+    }
 
 
     //Crea la clase que permite crear el evento de conexion

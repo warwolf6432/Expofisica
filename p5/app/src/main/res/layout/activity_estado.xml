@@ -25,32 +25,20 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
+
     <ImageView
         android:id="@+id/bFeliz"
-<<<<<<< HEAD
+
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="148dp"
         android:layout_marginEnd="12dp"
         android:clickable="true"
         android:onClick="happy"
         android:src="@drawable/feliz" />
-=======
-        android:layout_width="117dp"
-        android:layout_height="70dp"
-        android:clickable="true"
-        android:onClick="happy"
-        android:src="@drawable/feliz"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.447" />
->>>>>>> f6411cdc8462913deb8beb9be65d285e66bba072
 
     <ImageView
         android:id="@+id/picaron"
@@ -58,8 +46,8 @@
         android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="436dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginTop="370dp"
+        android:layout_marginEnd="55dp"
         android:onClick="picar"
         android:src="@drawable/pica" />
 
@@ -69,8 +57,8 @@
         android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="395dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="370dp"
         android:onClick="wara"
         android:src="@drawable/waracha" />
 
@@ -81,10 +69,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="169dp"
-        android:layout_marginTop="250dp"
-        android:layout_marginEnd="172dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="245dp"
+        android:layout_marginEnd="170dp"
         android:onClick="jeje"
         android:src="@drawable/bn" />
 
@@ -95,8 +83,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="316dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginEnd="51dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="55dp"
         android:layout_marginBottom="104dp"
         android:onClick="enamorado"
         android:src="@drawable/enamorado" />

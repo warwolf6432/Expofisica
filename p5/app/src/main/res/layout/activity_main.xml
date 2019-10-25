@@ -59,8 +59,9 @@
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="515dp"
-        android:layout_marginEnd="33dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginEnd="30dp"
+        android:onClick="pararP"
         android:src="@drawable/persiana1" />
 
     <ImageView
@@ -122,20 +123,7 @@
         android:layout_marginTop="96dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="25dp"
-        android:text="Control:"
-        android:textColor="@color/colorPrimary" />
-
-    <Switch
-        android:id="@+id/idSwPersianas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="535dp"
-        android:layout_marginEnd="253dp"
-        android:onClick="onclickPersianas"
-        android:text="Persianas"
+        android:text="Objeto:"
         android:textColor="@color/colorPrimary" />
 
     <Switch
@@ -144,11 +132,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="21dp"
         android:layout_marginTop="142dp"
-        android:layout_marginEnd="253dp"
+        android:layout_marginEnd="290dp"
         android:onClick="onclickLE"
-        android:text="Luces ext."
+        android:text="Luz Sala"
         android:textColor="@color/colorPrimary" />
 
     <Switch
@@ -157,11 +146,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="21dp"
         android:layout_marginTop="192dp"
-        android:layout_marginEnd="253dp"
+        android:layout_marginEnd="290dp"
         android:onClick="onclickLI"
-        android:text="Luces int."
+        android:text="Luces Estudio"
         android:textColor="@color/colorPrimary" />
 
     <Switch
@@ -170,9 +160,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="21dp"
         android:layout_marginTop="242dp"
-        android:layout_marginEnd="253dp"
+        android:layout_marginEnd="290dp"
         android:onClick="onclickSeguro"
         android:text="Seguro     "
         android:textColor="@color/colorPrimary" />
@@ -183,9 +174,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="21dp"
         android:layout_marginTop="292dp"
-        android:layout_marginEnd="253dp"
+        android:layout_marginEnd="290dp"
         android:onClick="onclickCafetera"
         android:text="Cafetera    "
         android:textColor="@color/colorPrimary" />
@@ -196,24 +188,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="96dp"
-        android:text="Objeto:"
+        android:text="Control:"
         android:textColor="@color/colorPrimary" />
-
-    <TextView
-        android:id="@+id/txtPersianas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="542dp"
-        android:layout_marginEnd="173dp"
-        android:text="Cerradas1"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtLucesExternas"
@@ -270,7 +248,7 @@
         android:layout_marginStart="142dp"
         android:layout_marginTop="342dp"
         android:layout_marginEnd="142dp"
-        android:text="Apagado6"
+        android:text="Apagado"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold" />
@@ -307,8 +285,8 @@
         android:layout_height="42dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="364dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="363dp"
         android:onClick="onclickB1"
         android:text="1" />
 
@@ -318,10 +296,8 @@
         android:layout_height="42dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_marginStart="185dp"
-        android:layout_marginTop="365dp"
-        android:layout_marginEnd="185dp"
+        android:layout_marginTop="363dp"
         android:layout_marginBottom="164dp"
         android:onClick="onclickB2"
         android:text="2" />
@@ -330,10 +306,10 @@
         android:id="@+id/bv3"
         android:layout_width="41dp"
         android:layout_height="42dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="364dp"
-        android:layout_marginEnd="140dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="363dp"
         android:onClick="onclickB3"
         android:text="3" />
 
@@ -342,10 +318,74 @@
         android:layout_width="83dp"
         android:layout_height="39dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="404dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="363dp"
         android:onClick="onclickAAbanico"
         android:text="Apagar" />
+
+    <ImageView
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="53dp" />
+
+    <ImageView
+        android:id="@+id/bajar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="513dp"
+        android:layout_marginEnd="29dp"
+        android:onClick="bajarP"
+        android:src="@drawable/ab" />
+
+    <ImageView
+        android:id="@+id/subir"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="406dp"
+        android:layout_marginEnd="30dp"
+        android:onClick="subirP"
+        android:src="@drawable/ar" />
+
+    <Switch
+        android:id="@+id/enchufe1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="428dp"
+        android:onClick="ench1"
+        android:text="Enchufe #1" />
+
+    <Switch
+        android:id="@+id/enchufe2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="428dp"
+        android:onClick="ench2"
+        android:text="Enchufe #2" />
+
+    <ImageView
+        android:id="@+id/plug"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="94dp"
+
+        android:layout_marginTop="458dp"
+        android:src="@drawable/plug" />
 
 
 </RelativeLayout>
