@@ -27,6 +27,7 @@
 
     <ImageView
         android:id="@+id/bFeliz"
+<<<<<<< HEAD
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentStart="true"
@@ -37,6 +38,19 @@
         android:clickable="true"
         android:onClick="happy"
         android:src="@drawable/feliz" />
+=======
+        android:layout_width="117dp"
+        android:layout_height="70dp"
+        android:clickable="true"
+        android:onClick="happy"
+        android:src="@drawable/feliz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447" />
+>>>>>>> f6411cdc8462913deb8beb9be65d285e66bba072
 
     <ImageView
         android:id="@+id/picaron"
