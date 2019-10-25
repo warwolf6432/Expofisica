@@ -10,11 +10,11 @@
         android:title="Desconectar" />
     <item
         android:id="@+id/itemInicio"
-        android:title="Inicio" />
+        android:title="Salir" />
     <item
         android:id="@+id/itemd"
         android:title="Datos de mi casa" />
     <item
-        android:id="@+id/itemLampara"
-        android:title="Lampara mágica" />
+        android:id="@+id/itemCasa"
+        android:title="Control" />
 </menu>

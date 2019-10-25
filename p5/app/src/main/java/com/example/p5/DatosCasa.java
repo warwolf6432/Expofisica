@@ -98,9 +98,9 @@ public class DatosCasa extends AppCompatActivity
             Intent siguiente= new Intent(this, DatosCasa.class);
             startActivity(siguiente);
         }
-        else if (id==R.id.itemLampara)
+        else if (id==R.id.itemCasa)
         {
-            Intent siguiente= new Intent(this, Lampara.class);
+            Intent siguiente= new Intent(this, MainActivity.class);
             startActivity(siguiente);
         }
         return super.onOptionsItemSelected(item);

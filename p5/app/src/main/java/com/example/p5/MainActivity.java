@@ -137,11 +137,6 @@ public class MainActivity extends AppCompatActivity
             Intent siguiente= new Intent(this, DatosCasa.class);
             startActivity(siguiente);
         }
-        else if (id==R.id.itemLampara)
-        {
-            Intent siguiente= new Intent(this, Lampara.class);
-            startActivity(siguiente);
-        }
 
         return super.onOptionsItemSelected(item);
     }
