@@ -151,7 +151,7 @@
         android:layout_marginTop="192dp"
         android:layout_marginEnd="290dp"
         android:onClick="onclickLI"
-        android:text="Luces Estudio"
+        android:text="Luz Estudio"
         android:textColor="@color/colorPrimary" />
 
     <Switch
